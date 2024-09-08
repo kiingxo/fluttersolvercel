@@ -15,8 +15,8 @@ class _WrapperState extends State<Wrapper> {
 
   final List<Widget> _screens = [
     const MyHomePage(),
-    const MevBotPage(), // Pass false to indicate no back button
-    const RecievePage(), // Pass false to indicate no back button
+    const MevBotPage(), 
+    const RecievePage(), 
   ];
 
   @override

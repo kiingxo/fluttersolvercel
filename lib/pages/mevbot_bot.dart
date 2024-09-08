@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:solanawallet/pages/enter_code.dart';
+import 'package:go_router/go_router.dart';
 
 class MevBotPage extends StatefulWidget {
   const MevBotPage({super.key});
@@ -33,18 +33,15 @@ class _MevBotPageState extends State<MevBotPage> {
           style: TextStyle(color: Colors.grey),
         ),
         backgroundColor: const Color.fromARGB(255, 30, 29, 29),
-        // Conditionally show the back button only if there is a previous page
-        leading: ModalRoute.of(context)?.isFirst == true
-            ? null
-            : IconButton(
-                icon: const Icon(
-                  Icons.arrow_back_ios,
-                  color: Colors.grey,
-                ),
-                onPressed: () {
-                  Navigator.pop(context); // Go back to the previous page
-                },
-              ),
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            color: Colors.grey,
+          ),
+          onPressed: () {
+            context.pop(); // Use GoRouter's pop to handle back navigation
+          },
+        ),
       ),
       body: Center(
         child: Column(
@@ -131,4 +128,25 @@ class _MevBotPageState extends State<MevBotPage> {
     );
   }
 
+  // Function to display the error modal
+  void showErrorModal(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: const Color.fromARGB(255, 30, 29, 29),
+          title: const Text("Error", style: TextStyle(color: Colors.white)),
+          content: const Text("Error 407: Invalid hold code.", style: TextStyle(color: Colors.white)),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Close the dialog
+              },
+              child: const Text("OK"),
+            ),
+          ],
+        );
+      },
+    );
+  }
 }

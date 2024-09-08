@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart'; // For clipboard functionality
+import 'package:go_router/go_router.dart'; // Import GoRouter
 
 class RecievePage extends StatefulWidget {
   const RecievePage({super.key});
@@ -29,29 +30,27 @@ class _RecievePageState extends State<RecievePage> {
           style: TextStyle(color: Colors.grey),
         ),
         backgroundColor: const Color.fromARGB(255, 30, 29, 29),
-        leading: ModalRoute.of(context)?.isFirst == true
-            ? null
-            : IconButton(
-                icon: const Icon(
-                  Icons.arrow_back_ios,
-                  color: Colors.grey,
-                ),
-                onPressed: () {
-                  Navigator.pop(context); // Go back to the previous page
-                },
-              ),
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            color: Colors.grey,
+          ),
+          onPressed: () {
+            context.pop(); // Use GoRouter's pop to handle back navigation
+          },
+        ),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             // SOL Logo
-            Image.asset(
-              'assets/images/solana.jpg',
-              width: 100,
-              height: 100,
-            ),
-            const SizedBox(height: 20),
+            // Image.asset(
+            //   'assets/images/solana.jpg',
+            //   width: 100,
+            //   height: 100,
+            // ),
+            // const SizedBox(height: 20),
             const Text(
               'SOL (Solana)',
               style: TextStyle(

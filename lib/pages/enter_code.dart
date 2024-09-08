@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class EnterCodePage extends StatefulWidget {
   const EnterCodePage({super.key});
@@ -21,14 +22,12 @@ class _EnterCodePageState extends State<EnterCodePage> {
         ),
         backgroundColor: const Color.fromARGB(255, 30, 29, 29),
         leading: IconButton(
-          
           icon: const Icon(
             Icons.arrow_back_ios,
             color: Colors.grey,
-            
           ),
           onPressed: () {
-            Navigator.pop(context); // Go back to the previous page
+            context.pop(); // Use GoRouter's `pop` to handle the back navigation
           },
         ),
       ),
@@ -65,8 +64,7 @@ class _EnterCodePageState extends State<EnterCodePage> {
                   showErrorModal(context); // Show the error modal when pressed
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor:
-                      const Color.fromARGB(255, 14, 83, 15), // Green background
+                  backgroundColor: const Color.fromARGB(255, 14, 83, 15), // Green background
                   padding: const EdgeInsets.symmetric(
                     horizontal: 50, // Increased width
                     vertical: 20, // Rectangular height
@@ -91,17 +89,17 @@ class _EnterCodePageState extends State<EnterCodePage> {
   }
 
   // Function to display the error modal
-
+ 
 }
 
-  void showErrorModal(BuildContext context) {
+ void showErrorModal(BuildContext context) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-                backgroundColor: const Color.fromARGB(255, 30, 29, 29),
-          title: const Text("Error",style: TextStyle(color: Colors.white),),
-          content: const Text("Error 407: Invalid hold code.",style: TextStyle(color: Colors.white),),
+          backgroundColor: const Color.fromARGB(255, 30, 29, 29),
+          title: const Text("Error", style: TextStyle(color: Colors.white)),
+          content: const Text("Error 407: Invalid hold code.", style: TextStyle(color: Colors.white)),
           actions: [
             TextButton(
               onPressed: () {
