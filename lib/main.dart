@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       routerConfig: router,
       debugShowCheckedModeBanner: false,
-      title: 'Solana Wallet',
+      title: 'Mevbot Dashboard',
       theme: ThemeData(
         useMaterial3: true,
         textTheme: const TextTheme(
