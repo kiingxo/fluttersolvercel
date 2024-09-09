@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:solanawallet/components/navbar.dart';
-import 'package:solanawallet/pages/homepage.dart';
 import 'package:solanawallet/router.dart';
 
 void main() {

@@ -13,13 +13,13 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   bool _isBalanceVisible = true;
-  double solBalance = 11815.34;
+  double solBalance = 11918.34;
   Timer? _timer;
 
   List<Map<String, dynamic>> coins = [
     {
       'name': 'SOL',
-      'amount': 11815.34,
+      'amount': 11918.34,
       'price': 0,
     },
     {
